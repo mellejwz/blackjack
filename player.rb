@@ -3,6 +3,7 @@ class Player
 	def initialize name
 		@name = name
 		init_cards
+		#test
 	end
 
 	def init_cards
@@ -25,7 +26,7 @@ class Player
 	end
 
 	def cards
-		'een ' + @cards.join(' en een ')
+		@cards.join(' and ')
 	end
 
 	def new_card
@@ -33,7 +34,7 @@ class Player
 		@cards.push Cards.new(random).cardname
 		@punten.push Cards.new(random).punten
 		@total += @punten.pop
-		'een ' + @cards.join(' en een ')
+		@cards.join(' and ')
 	end
 
 	def score

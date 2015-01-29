@@ -36,8 +36,8 @@ def initial_cards
 	system('clear')
 
 	puts 'Dealer: ' + @dealer.name
-	puts @dealer.cards
-	puts 'Punten: ' + @dealer.score.to_s
+	puts 'The dealer has ' + @dealer.cards
+	puts @dealer.score.to_s + ' points'
 	puts
 	puts 'Players:'
 
@@ -45,7 +45,7 @@ def initial_cards
 		puts
 		puts @players[player].name
 		puts @players[player].cards
-		puts 'Punten: ' + @players[player].score.to_s
+		puts @players[player].score.to_s + ' points'
 	end
 
 	another_card	
@@ -55,8 +55,18 @@ end
 def another_card
 	@players.each_with_index do |x, player|
 		#fabulous code goes here
+		puts
+		puts 'You\'ve got ' + @players[player].score.to_s + ' points ' + @players[player].name
+		puts 'Do you want another card?'
+		if gets.chomp == 'yes'
+			puts
+			puts 'You\'ve now got ' + @players[player].new_card
+			puts @players[player].score.to_s + ' points'
+		end
 	end
 end
 
-#use playerlist to enter the player's and the dealer's names, use test to automagically add 3 players and the dealer
-playerlist
+#use 'playerlist' to enter the player's and the dealer's names, use 'test' to automagically add 3 players and the dealer
+
+# playerlist
+test
