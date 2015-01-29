@@ -62,6 +62,9 @@ def another_card
 			puts
 			puts 'You\'ve now got ' + @players[player].new_card
 			puts 'and you have ' + @players[player].score.to_s + ' points'
+			if @players[player].score<21
+				another_card
+			end
 		end
 	end
 end
