@@ -35,7 +35,7 @@ def initial_cards
 	system('cls')
 	system('clear')
 
-	puts 'Dealer: ' + @dealer.name
+	puts 'Dealer ' + @dealer.name + ':'
 	puts 'The dealer has ' + @dealer.cards
 	puts @dealer.score.to_s + ' points'
 	puts
@@ -43,9 +43,9 @@ def initial_cards
 
 	@players.each_with_index do |x, player|
 		puts
-		puts @players[player].name
-		puts @players[player].cards
-		puts @players[player].score.to_s + ' points'
+		puts @players[player].name + ':'
+		puts 'You have ' + @players[player].cards
+		puts 'and you have ' + @players[player].score.to_s + ' points'
 	end
 
 	another_card	
@@ -54,14 +54,14 @@ end
 #after getting 2 cards, ask if the players want another card
 def another_card
 	@players.each_with_index do |x, player|
-		#fabulous code goes here
 		puts
+		puts '========================================'
 		puts 'You\'ve got ' + @players[player].score.to_s + ' points ' + @players[player].name
 		puts 'Do you want another card?'
 		if gets.chomp == 'yes'
 			puts
 			puts 'You\'ve now got ' + @players[player].new_card
-			puts @players[player].score.to_s + ' points'
+			puts 'and you have ' + @players[player].score.to_s + ' points'
 		end
 	end
 end

@@ -3,7 +3,6 @@ class Player
 	def initialize name
 		@name = name
 		init_cards
-		#test
 	end
 
 	def init_cards
