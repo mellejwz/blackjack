@@ -41,19 +41,20 @@ def initial_cards
 	puts
 	puts 'Players:'
 
-	@players.each_with_index do |a, i|
+	@players.each_with_index do |x, player|
 		puts
-		puts @players[i].name
-		puts @players[i].cards
-		puts 'Punten: ' + @players[i].score.to_s
+		puts @players[player].name
+		puts @players[player].cards
+		puts 'Punten: ' + @players[player].score.to_s
 	end
 
 	another_card	
 end
 
+#after getting 2 cards, ask if the players want another card
 def another_card
-	@players.each_with_index do |b, j|
-		#code goes here
+	@players.each_with_index do |x, player|
+		#fabulous code goes here
 	end
 end
 
