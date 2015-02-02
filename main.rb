@@ -55,16 +55,11 @@ end
 def another_card
 	@players.each_with_index do |x, player|
 		puts
-		puts '========================================'
-		puts 'You\'ve got ' + @players[player].score.to_s + ' points ' + @players[player].name
-		puts 'Do you want another card?'
-		if gets.chomp == 'yes'
-			puts
-			puts 'You\'ve now got ' + @players[player].new_card
-			puts 'and you have ' + @players[player].score.to_s + ' points'
-			if @players[player].score<21
-				another_card
-			end
+		puts 'do you want another card ' + @players[player].name + '?'
+		if gets.chomp == 'yes' && @players[player].score < 21
+			puts @players[player].name
+			puts @players[player].new_card
+			puts @players[player].score
 		end
 	end
 end
