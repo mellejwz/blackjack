@@ -37,7 +37,7 @@ def initial_cards
 
 	puts 'Dealer ' + @dealer.name + ':'
 	puts 'The dealer has ' + @dealer.cards
-	puts @dealer.score.to_s + ' points'
+	puts 'which add up to ' + @dealer.score.to_s + ' points'
 	puts
 	puts 'Players:'
 
@@ -45,7 +45,7 @@ def initial_cards
 		puts
 		puts @players[player].name + ':'
 		puts 'You have ' + @players[player].cards
-		puts 'and you have ' + @players[player].score.to_s + ' points'
+		puts 'which add up to ' + @players[player].score.to_s + ' points'
 	end
 
 	another_card	
@@ -54,11 +54,13 @@ end
 #after getting 2 cards, ask if the players want another card
 def another_card
 	@players.each_with_index do |x, player|
-		puts
-		puts 'do you want another card ' + @players[player].name + '?'
-		if gets.chomp == 'yes' && @players[player].score < 21
-			puts @players[player].name
+		while @players[player].score<21
+			puts
+			puts 'you have ' + @players[player].score.to_s + ' points ' + @players[player].name + ', do you want another card?'
+			break if gets.chomp == 'no'
+			puts
 			puts @players[player].new_card
+			puts 'You now have ' + @players[player].score.to_s + ' points'
 			puts @players[player].score
 		end
 	end
