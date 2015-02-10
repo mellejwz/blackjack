@@ -64,7 +64,7 @@ def another_card
 	end
 end
 
-#use 'playerlist' to enter the player's and the dealer's names, use 'test' to automagically add 3 players and the dealer
+#uncomment 'playerlist' to enter the player's and the dealer's names, use 'test' to automagically add 3 players and the dealer
 
 # playerlist
 test
