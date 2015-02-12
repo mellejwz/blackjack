@@ -1,3 +1,4 @@
+#by Melle Zwerver
 require './player.rb'
 
 #create an empty playerlist
