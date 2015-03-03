@@ -16,10 +16,11 @@ class Deck
 	end
 
 	def score
-		@score.join(' ')
+		@score
 	end
 
 	def new_card
-		@cards.push Cards.new.card
+		@cards.push @test.card
+		@score.push @test.score
 	end
 end

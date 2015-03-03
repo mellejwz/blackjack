@@ -6,6 +6,8 @@ puts @player.name
 
 puts @player.player_deck
 
+puts @player.player_score
+
 puts 'another card?'
 
 if gets.chomp == 'yes'
@@ -13,3 +15,5 @@ if gets.chomp == 'yes'
 end
 
 puts @player.player_deck
+
+puts @player.player_score
