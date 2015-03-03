@@ -6,16 +6,21 @@ def test
 end
 
 def start_game
+	system('clear')
+	system('cls')
 	puts @player.name + ':'
 	puts @player.player_deck
 	puts @player.player_score
 	puts
 
-	add_cards
+	if @player.player_score == 21
+		puts 'yeaaah!'
+	else add_cards
+	end
 end
 
 def add_cards
-	if @player.player_score <= 21
+	if @player.player_score < 21
 		puts 'another card' + ' ' + @player.name + '?'
 
 		if gets.chomp == 'yes'
@@ -27,10 +32,13 @@ def add_cards
 end
 
 def score
+	system('clear')
+	system('cls')
 	puts
 	puts 'You\'ve now got:'
 	puts @player.player_deck
 	puts @player.player_score
+
 	puts
 	add_cards
 end
