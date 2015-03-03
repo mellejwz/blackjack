@@ -5,9 +5,9 @@ class Deck
 		@cards = []
 		@points = []
 		for i in 0...2 do
-			@card = Cards.new
-			@cards.push @card.card
-			@points.push @card.score
+			newcard = Cards.new
+			@cards.push newcard.card
+			@points.push newcard.score
 		end
 	end
 
@@ -25,7 +25,8 @@ class Deck
 	end
 
 	def new_card
-		@cards.push @card.card
-		@points.push @card.score
+		newcard = Cards.new
+		@cards.push newcard.card
+		@points.push newcard.score
 	end
 end
