@@ -22,3 +22,6 @@ class Player
 		@deck.new_card
 	end
 end
+
+class Dealer < Player
+end

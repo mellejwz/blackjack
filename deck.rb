@@ -3,24 +3,29 @@ require './cards.rb'
 class Deck
 	def initialize
 		@cards = []
-		@score = []
+		@points = []
 		for i in 0...2 do
-			@test = Cards.new
-			@cards.push @test.card
-			@score.push @test.score
+			@card = Cards.new
+			@cards.push @card.card
+			@points.push @card.score
 		end
 	end
 
 	def deck
-		@cards.join(' and ')
+		@deck = @cards.join(' and ')
+		@deck
 	end
 
 	def score
-		@score
+		score = 0
+		for x in 0...@cards.length do
+			score += @points[x]
+		end
+		score
 	end
 
 	def new_card
-		@cards.push @test.card
-		@score.push @test.score
+		@cards.push @card.card
+		@points.push @card.score
 	end
 end
