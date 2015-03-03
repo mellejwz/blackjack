@@ -4,4 +4,12 @@ require './player.rb'
 
 puts @player.name
 
-puts @player.initial_cards
+puts @player.player_deck
+
+puts 'another card?'
+
+if gets.chomp == 'yes'
+	@player.new_card
+end
+
+puts @player.player_deck
